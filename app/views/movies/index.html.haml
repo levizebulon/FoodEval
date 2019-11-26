@@ -1,0 +1,22 @@
+-#  This file is app/views/movies/index.html.haml
+
+%h1 全部食品
+
+%table#movies
+  %thead
+    %tr
+      %th 食品列表
+      %th 价格
+      %th 地址
+      %th 评分
+      %th 详细信息及评价
+  %tbody
+    - @movies.each do |movie|
+      %tr
+        %td= movie.title
+        %td= movie.credit
+        %td= movie.classhour
+        %td= movie.rating.round(1)
+        %td= link_to "关于#{movie.title}", movie_path(movie)
+
+= link_to '添加新食品', new_movie_path

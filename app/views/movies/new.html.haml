@@ -1,0 +1,17 @@
+%h1 添加新食品
+
+= form_tag movies_path do
+
+  = label :movie, :title, '食品名称'
+  = text_field :movie, 'title'
+  
+  = label :movie, :credit, '食品价格'
+  = text_field :movie, 'credit'
+  
+  = label :movie, :classhour, '地址'
+  = text_field :movie, 'classhour'
+
+  = label :movie, :description, '描述'
+  = text_field :movie, 'description'
+
+  = submit_tag '保存修改'
