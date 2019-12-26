@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  post 'sessions/create'
+
+  get 'applicants/new'
+
+  post 'applicants/create'
+  
+ 
+
+  resources :reviews
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 关键字表示此路由为根路由，后跟的 controller_name#action_name
+  # 意为该请求交给 controller_name 控制器中的 action_name 动作处理
+  root 'applicants#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -14,6 +27,8 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  resources :movies
+  
   # Example resource route with options:
   #   resources :products do
   #     member do
